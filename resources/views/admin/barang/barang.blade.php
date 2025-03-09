@@ -176,7 +176,7 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table id="barang" class="table table-bordered stripe row-border order-column nowrap" style="width:100%" width="100%" cellspacing="0">
+                <table id="barang" class="table table-bordered stripe row-border order-column nowrap table-hover" style="width:100%" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
                             <th></th>
@@ -189,7 +189,7 @@
                             <th>Stok</th>
                             <th>Harga Beli</th>
                             <th>Harga Jual</th>
-                            <th>Keterangan</th>
+                            {{-- <th>Keterangan</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -207,9 +207,9 @@
                                 <td>{{ $item->nama_barang }}</td>
                                 <td>{{ $item->merk }}</td>
                                 <td>{{ $item->stok }}</td>
-                                <td>{{ 'Rp ' . number_format($item->harga_jual, 0, ',', '.') }}</td>
                                 <td>{{ 'Rp ' . number_format($item->harga_beli, 0, ',', '.') }}</td>
-                                <td>{{ $item->keterangan ?? '-' }}</td>
+                                <td>{{ 'Rp ' . number_format($item->harga_jual, 0, ',', '.') }}</td>
+                                {{-- <td>{{ $item->keterangan ?? '-' }}</td> --}}
                                 <td>
                                     <div class="d-flex justify-content-center">
                                         <a href="#" class="btn btn-warning btn-circle btn-sm mr-2" data-toggle="modal" data-target="#modalEdit{{ $item->id_barang }}" title="Update">
@@ -399,7 +399,7 @@
                     targets: 0 // Menonaktifkan pengurutan pada kolom pertama (checkbox)
                 }],
                 fixedColumns: {
-                    left: 3 // Mengunci 3 kolom pertama agar tetap terlihat saat di-scroll
+                    left: 4 // Mengunci 3 kolom pertama agar tetap terlihat saat di-scroll
                 },
                 order: [
                     [1, 'asc']
@@ -407,7 +407,7 @@
                 paging: false, // Mengaktifkan pagination
                 scrollCollapse: true,
                 scrollX: true, // Mengaktifkan horizontal scrolling
-                scrollY: 500, // Mengatur tinggi tabel
+                scrollY: 400, // Mengatur tinggi tabel
                 select: {
                     style: 'multi', // Memungkinkan pemilihan beberapa baris
                     selector: 'td:first-child input[type="checkbox"]' // Target checkbox

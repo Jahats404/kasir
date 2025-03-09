@@ -1,6 +1,23 @@
 $('#dataTable').DataTable({
     ordering: false,
 });
+
+$('#tableJenisBarang').DataTable({
+    ordering: true, // Menonaktifkan fitur pengurutan
+    paging: false, // Mengaktifkan pagination
+    scrollCollapse: true,
+    scrollX: true, // Mengaktifkan horizontal scrolling
+    scrollY: 400, // Mengatur tinggi tabel
+});
+
+$('#tableDaftarTransaksi').DataTable({
+    ordering: true, // Menonaktifkan fitur pengurutan
+    paging: false, // Mengaktifkan pagination
+    scrollCollapse: true,
+    scrollX: true, // Mengaktifkan horizontal scrolling
+    scrollY: 400, // Mengatur tinggi tabel
+});
+
 $('#dataTableTransaksi').DataTable({
     ordering: true,
     paging: false,

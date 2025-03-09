@@ -15,7 +15,7 @@ class AdminBarangController extends Controller
 {
     public function jb()
     {
-        $jb = JenisBarang::all();
+        $jb = JenisBarang::orderBy('nama_jenis','asc')->get();
 
         return view('admin.barang.jenis-barang',compact('jb'));
     }

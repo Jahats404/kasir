@@ -14,22 +14,22 @@
         
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered stripe row-border order-column nowrap table-hover" id="tableDaftarTransaksi" style="width:100%" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
-                            <th>No</th>
-                            <th>ID Transaksi</th>
-                            <th>Tanggal</th>
-                            <th>Total Harga</th>
-                            <th>Diskon</th>
-                            <th>Keterangan</th>
-                            <th>Aksi</th>
+                            <th class="text-center">No</th>
+                            <th class="text-center">ID Transaksi</th>
+                            <th class="text-center">Tanggal</th>
+                            <th class="text-center">Total Harga</th>
+                            <th class="text-center">Diskon</th>
+                            <th class="text-center">Keterangan</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($transaksi as $item)
                             <tr class="text-center">
-                                <td>{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->id_transaksi }}</td>
                                 <td>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</td>
                                 <td>{{ 'Rp ' . number_format($item->total_harga, 0, ',', '.') }}</td>

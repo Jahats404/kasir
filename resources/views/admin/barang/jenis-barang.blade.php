@@ -62,19 +62,19 @@
 
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered stripe row-border order-column nowrap table-hover" id="tableJenisBarang" style="width:100%" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
-                            <th>No</th>
-                            <th>Nama Jenis</th>
-                            <th>Keterangan</th>
-                            <th>Aksi</th>
+                            <th class="text-center">No</th>
+                            <th class="text-center">Nama Jenis</th>
+                            <th class="text-center">Keterangan</th>
+                            <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($jb as $item)
                             <tr class="text-center">
-                                <td>{{ $loop->iteration }}</td>
+                                <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama_jenis }}</td>
                                 <td>{{ $item->keterangan ?? '-' }}</td>
                                 <td>
